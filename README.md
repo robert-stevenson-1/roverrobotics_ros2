@@ -1,7 +1,13 @@
 
 # ROS2 Driver for Rover Robots
 
-  
+## Notable Changes 
+
+ROS2 doesn't seen to like the FTDI Cable that is ued to talk with the motor controller. As indicated in an [issue](https://github.com/RoverRobotics/roverrobotics_ros2_archive/issues/22#issuecomment-1485553527) in the old ROS2 Package from Rover Robotics, there is a suggested workaround to use the micro-usb connection on the controller for Controls. 
+
+This change means that the rover device port is (likely) going to be `/dev/ttyACM0` and not `/dev/ttyUSB0` (or `/dev/rover-control`) if the [rover_install_scripts_ros2](https://github.com/RoverRobotics/rover_install_scripts_ros2)'s scripts where used.
+
+These changes where tested with ROS2 Humble (running docker) and have success drove a Rover Zero 3.
 
 ## About:
 
